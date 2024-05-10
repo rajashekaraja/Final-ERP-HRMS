@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Employee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #f4f4f4;
+    color: rgb(24, 22, 22);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.navbar i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+.navbar span {
+    font-weight: bold;
+    color: rgb(27, 26, 26); /* Change text color */
+}
+
+.navbar button[type='submit'] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 6px 12px; /* Adjust button padding */
+            font-size: 14px; /* Adjust button font size */
+            margin-right: 10px; 
+            
+        }
+
+        .navbar button[type='submit']:hover {
+            background-color: #0056b3;
+        }
+
+h1 { 
+    text-align: center; 
+}
+
+.form {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+span {
+    color: red;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+legend {
+    font-weight: bold;
+    color: #7360ff;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex-basis: calc(33.33% - 10px); /* Adjust as needed */
+    margin-bottom: 20px; /* Added more space */
+}
+
+/* Adjustments for mobile responsiveness */
+@media screen and (max-width: 600px) {
+    .column {
+        flex-basis: calc(100% - 10px); /* Full width on mobile */
+    }
+}
+table{
+    width:100%;
+}
+th{
+    background-color: #f2f2f2;
+    border:1px solid #ccc;
+}
+
+label {
+    margin-bottom: 10px; /* Add space between label and input */
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+select,
+textarea {
+    width: 100%; /* Full width */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 10px; /* Add space between input and next label */
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    display: block;
+    padding: 10px;
+    background-color: #0fac36;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.rraajjaa{
+    background-color: #0fac36;
+    border:none;
+    display: block;
+    border-radius: 4px;
+    color:#f4f4f4;
+    font-size: 14px;
+    padding: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.rraajjaa:hover{
+    background-color: #0056b3;
+}
+
+.addRow{
+    margin-top: 10px;
+    background-color: #0056b3;
+    border:1px;
+    border-radius: 4px;
+    color:white;
+    padding:8px;
+}
+
+
+.section-content {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.section-content.show {
+    display: block;
+}
+
+.navbarr{
+            background-color:#fff;
+            overflow:hidden;
+            margin:20px 115.5px 5px;
+            border-radius:5px
+        }
+        .navbarr a{
+            float:left;
+            display:block;  
+            color:black;
+            font-weight: bold;
+            text-align:center;
+            padding:12px 10px;
+            text-decoration:none;
+            font-size:12px
+        }
+        .navbarr a:hover{
+            background-color:#ddd;
+            color:black
+        }
+
+
+        .line {
+            position: absolute;
+            top: 56px;
+            left: 5px;
+            width: 90px;
+            height: 4px;
+            background-color: #7360ff;
+            border-radius: 10px;
+            transition: width 0.3s ease, left 0.3s ease; /* Added transition */
+        }
+        .next-btn {
+            background-color: #7360ff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+
+        .next-btn:hover {
+            background-color: #5a4ee0;
+        }
+
+        .editBtn,
+            .deleteBtn {
+            padding: 5px 10px;
+            margin-right: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            }
+
+
+            .editBtn {
+            background-color: #007bff; /* Blue edit button */
+            color: #fff;
+            }
+
+
+            .deleteBtn {
+            background-color: #dc3545; /* Red delete button */
+            color: #fff;
+            }
+            #saveBtn {
+            background-color: #4CAF50; /* Green button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px; /* Adjust margin as needed */
+            }
+
+
+            #saveBtn:hover {
+            background-color: #45a049; /* Darker green on hover */
+            }
+
+            .tab-box {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-bottom: 2px solid  rgba(229,229,299);
+            position: relative;
+            background-color: white;
+            margin-bottom: 18px;
+        }
+        .tab-btn {
+            font-size: 12px;
+            font-weight: 600;
+            color: #919191;
+            background: none;
+            border: none;
+            padding: 18px;
+            cursor: pointer;
+        }
+
+
+        .tab-btn.active {
+            color: #7360ff;
+        }
+
+        .joining_details, .departmentAnd_grade_details, .leave_details, .salary_details, .contact_details, .personal_details, .educational_details, .previuos_work_experience_details, .exit_details, .additional_details{
+            display: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <i class="fas fa-bars"></i>
+            <span>New Employee</span>
+        </div>
+        <form id="saveForm" action="#" method="post">
+            <button type="button" id="saveButton" class="rraajjaa">Save</button>
+        </form>
+    </div>
+
+    
+
+    
+    <form id="employeeForm" class="form" action="{% url 'save_employee' %}" method="post">
+        <div class="tab-box">
+            <button class="tab-btn active">Overview</button>
+            <button class="tab-btn">Joining Details</button>
+            <button class="tab-btn">Department and Grade</button>
+            <button class="tab-btn">Leave Details</button>
+            <button class="tab-btn">Salary Details</button>
+            <button class="tab-btn">Contact Details</button>
+            <button class="tab-btn">Personal Details</button>
+            <button class="tab-btn">Educational Qualification</button>
+            <button class="tab-btn">Previous Work Experience</button>
+            <button class="tab-btn">Exit Details</button>
+            <button class="tab-btn">Additional Features</button>
+    
+            <div class="line"></div>
+        </div>
+        {% csrf_token %}
+        <!-- Personal Details -->
+        <div class="overview_details">
+        <fieldset>
+            <legend>Personal Details</legend>
+            <div class="row">
+                <div class="column">
+                    <label for="firstname">First Name<span>*</span>:</label>
+                    <input type="text" id="firstname" name="firstname" required><br>
+                </div>
+                <div class="column">
+                    <label for="midname">Middle Name:</label>
+                    <input type="text" id="midname" name="midname"><br>
+                </div>
+                <div class="column">
+                    <label for="lastname">Last Name<span>*</span>:</label>
+                    <input type="text" id="lastname" name="lastname" required><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="gender">Gender<span>*</span>:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select><br>
+                </div>
+                <div class="column">
+                    <label for="dob">Date of Birth<span>*</span>:</label>
+                    <input type="date" id="dob" name="dob" required><br>
+                </div>
+                <div class="column">
+                    <label for="doj">Date of Joining<span>*</span>:</label>
+                    <input type="date" id="doj" name="doj" required><br>
+                </div>  
+            </div>
+            
+            
+        </fieldset>
+
+
+        <!-- Employment Details -->
+        <fieldset>
+            <legend>Employment Details</legend>
+            <div class="row">
+                <div class="column">
+                    <label for="employment_type">Employment Type<span>*</span>:</label>
+                    <select id="employment_type" name="employment_type" required>
+                        <option value="intern">Intern</option>
+                        <option value="contract">Contract</option>
+                        <option value="full-time">Full-time</option>
+                        <option value="part-time">Part-time</option>
+                        <option value="probation">Probation</option>
+                    </select><br>
+                </div>
+                <div class="column">
+                    <label for="create_user">Create User<span>*</span>:</label>
+                    <input type="checkbox" id="create_user" name="create_user" required><br>
+                </div>
+                <div class="column">
+                    
+                </div>
+            
+            <!-- Add other employment details here -->
+        </fieldset><button class="next-btn">Next</button></div>
+
+        <!-- Joining Details-->
+        <div class="joining_details">
+        <fieldset>
+            <legend>Joining Details</legend>
+            <div class="row">
+                <div class="column">
+                    <label for="offerdate">Offer Date<span>*</span>:</label>
+                    <input type="date" id="offerdate" name="offerdate" required><br>
+                </div>
+                <div class="column">
+                    <label for="confirmationdate">Confirmation Date<span>*</span>:</label>
+                    <input type="date" id="confirmationdate" name="confirmationdate" required><br>
+                </div>
+                <div class="column">
+                    <label for="contractenddate">Contract End Date<span>*</span>:</label>
+                    <input type="date" id="contractenddate" name="contractenddate" required><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="dateofretirement">Date of Retirement<span>*</span>:</label>
+                    <input type="date" id="dateofretirement" name="dateofretirement" required><br>
+                </div>
+                <div class="column">
+                    <label for="notice">Notice (Days)<span>*</span>:</label>
+                    <input type="number" id="notice" name="notice" required><br>
+                </div>
+                <div class="column">
+
+                </div>
+            </div>
+            
+            <!-- Add other employment details here -->
+        </fieldset><button class="next-btn">Next</button></div>
+
+
+
+        <!-- Department and Grade -->
+        <div class="departmentAnd_grade_details">
+        <fieldset>
+            <legend id="departmentAndGrade_details_toggle">Department and Grade   <i class="fas fa-chevron-down"></i></legend>
+            <!-- Add department and grade fields here -->
+                <div class="section-content" id="departmentAndGrade_details_section">
+                    <div class="row">
+                        <div class="column">
+                            <label for="company">Company<span>*</span>:</label>
+                            <input type="text" id="company" name="company" required><br>
+                        </div>
+                        <div class="column">
+                            <label for="designation">Designation<span>*</span>:</label>
+                            <input type="text" id="designation" name="designation" required><br>
+                        </div>
+                        <div class="column">
+                            <label for="branch">Branch<span>*</span>:</label>
+                            <input type="text" id="branch" name="branch" required><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <label for="department">Department<span>*</span>:</label>
+                            <input type="text" id="department" name="department" required><br>
+                        </div>
+                        <div class="column">
+                            <label for="reports_to">Reports To:</label>
+                            <input type="text" id="reports_to" name="reports_to"><br>
+                        </div>
+                        <div class="column">
+                            <label for="grade">Grade:</label>
+                            <input type="text" id="grade" name="grade"><br>
+                        </div>
+                    </div>
+                </div>
+        </fieldset><button class="next-btn">Next</button></div>
+
+
+        <!-- Leave Details -->
+        <div class="leave_details">
+        <fieldset>
+            <legend id="leave_details_toggle">Leave Details   <i class="fas fa-chevron-down"></i></legend>
+            <!-- Add leave details fields here -->
+            <div class="section-content" id="leave_details_section">
+                <div class="row">
+                    <div class="column">
+                        <label for="annual_leave">Annual Leave<span>*</span>:</label>
+                        <input type="number" id="annual_leave" name="annual_leave" required><br>
+                    </div>
+                    <div class="column">
+                        <label for="sick_leave">Sick Leave<span>*</span>:</label>
+                        <input type="number" id="sick_leave" name="sick_leave" required><br>
+                    </div>
+                    <div class="column">
+                        <label for="maternity_leave">Maternity Leave:</label>
+                        <input type="number" id="maternity_leave" name="maternity_leave"><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="paternity_leave">Paternity Leave:</label>
+                        <input type="number" id="paternity_leave" name="paternity_leave"><br>
+                    </div>
+                    <div class="column">
+                        <label for="other_leave">Other Leave:</label>
+                        <input type="number" id="other_leave" name="other_leave"><br>
+                    </div>
+                    <div class="column">
+                    </div>
+                </div>
+            </div>
+        </fieldset><button class="next-btn">Next</button></div>
+
+
+        <!-- Salary Details -->
+        <div class="salary_details">
+        <fieldset>
+            <legend id="salary_details_toggle">Salary Details   <i class="fas fa-chevron-down"></i></legend>
+            <!-- Add salary details fields here -->
+            <div class="section-content" id="salary_details_section">
+                <div class="row">
+                    <div class="column">
+                        <label for="salary_amount">Salary Amount<span>*</span>:</label>
+                        <input type="number" id="salary_amount" name="salary_amount" required><br>
+                    </div>
+                    <div class="column">
+                        <label for="salary_payment_mode">Payment Mode<span>*</span>:</label>
+                        <select id="salary_payment_mode" name="salary_payment_mode" required>
+                            <option value="bank">Bank</option>
+                            <option value="cheque">Cheque</option>
+                            <option value="cash">Cash</option>
+                        </select><br>
+                    </div>
+                    <div class="column">
+                    </div>
+                </div>
+            </div>
+        </fieldset><button class="next-btn">Next</button></div>
+
+
+        <!-- Contact Details -->
+        <div class="contact_details">
+        <fieldset>
+            <legend id="contact_details_toggle">Contact Details   <i class="fas fa-chevron-down"></i></legend>
+            <!-- Add contact details fields here -->
+            <div class="section-content" id="contact_details_section">
+                <div class="row">
+                    <div class="column">
+                        <label for="mobile_number">Mobile Number<span>*</span>:</label>
+                        <input type="tel" id="mobile_number" name="mobile_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required><br>
+                    </div>
+                    <div class="column">
+                        <label for="current_address">Current Address<span>*</span>:</label>
+                        <textarea id="current_address" name="current_address" required></textarea><br>
+                    </div>
+                    <div class="column">
+                        <label for="permanent_address">Permanent Address<span>*</span>:</label>
+                        <textarea id="permanent_address" name="permanent_address" required></textarea><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="personal_email">Personal Email<span>*</span>:</label>
+                        <input type="email" id="personal_email" name="personal_email" required><br>
+                    </div>
+                    <div class="column">
+                        <label for="company_email">Company Email<span>*</span>:</label>
+                        <input type="email" id="company_email" name="company_email" required><br>
+                    </div>
+                    <div class="column">
+                        <label for="preferred_email">Preferred Email ID<span>*</span>:</label>
+                        <select id="preferred_email" name="preferred_email" required>
+                            <option value="company_email">Company Email</option>
+                            <option value="personal_email">Personal Email</option>
+                            <option value="user_id">User ID</option>
+                        </select><br>
+                    </div>
+                </div>
+            </div>
+    
+        </fieldset><button class="next-btn">Next</button></div>
+
+
+        <!-- Personal Details -->
+        <div class="personal_details">
+        <fieldset>
+            <legend id="personal_details_toggle">Personal Details   <i class="fas fa-chevron-down"></i></legend>
+            <!-- Add personal details fields here -->
+            <div class="section-content" id="personal_details_section">
+                <h3>Family Background:</h3>
+                <div class="row">
+                    <div class="column">
+                        <label for="parent_name">Parent's Name<span>*</span>:</label>
+                        <input type="text" id="parent_name" name="parent_name" required><br>
+                    </div>
+                    <div class="column">
+                        <label for="parent_occupation">Parent's Occupation<span>*</span>:</label>
+                        <input type="text" id="parent_occupation" name="parent_occupation" required><br>
+                    </div>
+                    <div class="column">
+                        <label for="spouse_name">Spouse's Name:</label>
+                        <input type="text" id="spouse_name" name="spouse_name"><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="spouse_occupation">Spouse's Occupation:</label>
+                        <input type="text" id="spouse_occupation" name="spouse_occupation"><br>
+                    </div>
+                    <div class="column">
+                        <label for="children_names">Children's Names:</label>
+                        <input type="text" id="children_names" name="children_names"><br>
+                    </div>
+                    <div class="column">
+                    </div>
+                </div>
+
+                <h3>Passport Details:</h3>
+                <div class="row">
+                    <div class="column">
+                        <label for="passport_issue_date">Issue Date:</label>
+                        <input type="date" id="passport_issue_date" name="passport_issue_date"><br>
+                    </div>
+                    <div class="column">
+                        <label for="passport_place_of_issue">Place of Issue:</label>
+                        <input type="text" id="passport_place_of_issue" name="passport_place_of_issue"><br>
+                    </div>
+                    <div class="column">
+                    </div>
+                </div>
+
+                <h3>Health Details:</h3>
+                <div class="row">
+                    <div class="column">
+                        <label for="height">Height (in cm):</label>
+                        <input type="number" id="height" name="height"><br>
+                    </div>
+                    <div class="column">
+                        <label for="weight">Weight (in kg):</label>
+                        <input type="number" id="weight" name="weight"><br>
+                    </div>
+                    <div class="column">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="medical_concerns">Medical Concerns:</label>
+                        <input type="text" id="medical_concerns" name="medical_concerns"><br>
+                    </div>
+                    <div class="column">
+                        <label for="allergies">Allergies:</label>
+                        <input type="text" id="allergies" name="allergies"><br>
+                    </div>
+                    <div class="column">
+                    </div>
+                </div>
+
+            </div>
+        </fieldset><button class="next-btn">Next</button></div>
+
+
+        <!-- Educational Qualification -->
+        <div class="educational_details">
+        <fieldset>
+            <legend id="educational_details_toggle">Educational Qualification   <i class="fas fa-chevron-down"></i></legend>
+            <!-- Add educational qualification fields here -->
+            <div class="section-content" id="educational_details_section">
+                <table id="education_table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>School/University</th>
+                            <th>Qualification</th>
+                            <th>Percentage/CGPA</th>
+                            <th>Year of Passing</th>
+                            <th>Delete</th> <!-- This column is for the downward arrow -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- You can add initial rows here if needed -->
+                    </tbody>
+                </table>
+                <button id="add_row_button" type="button" class="addRow">Add Row</button>
+            </div>
+            <input type="hidden" id="educational_details_input" name="educational_details">
+        </fieldset><button class="next-btn">Next</button></div>
+
+
+        <!-- Previous Work Experience -->
+        <div class="previuos_work_experience_details">
+        <fieldset>
+            <legend id="work_experience_toggle">Previous Work Experience   <i class="fas fa-chevron-down"></i></legend>
+            <!-- Add previous work experience fields here -->
+            <div class="section-content" id="work_experience_section">
+                <table id="work_experience_table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Company</th>
+                            <th>Position</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Delete</th> <!-- This column is for the delete button -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- No initial rows -->
+                    </tbody>
+                </table>
+                <button id="add_work_experience_row_button" type="button" class="addRow">Add Row</button>
+            </div>
+            <input type="hidden" id="workExperience_details_input" name="workExperience_details">
+        </fieldset><button class="next-btn">Next</button></div>
+
+
+        <!-- Exit Details -->
+        <div class="exit_details">
+        <fieldset>
+            <legend id="exit_details_toggle">Exit Details   <i class="fas fa-chevron-down"></i></legend>
+            <!-- Add exit details fields here -->
+            <div class="section-content" id="exit_details_section">
+                <div class="row">
+                    <div class="column">
+                        <label for="exit_status">Status<span>*</span>:</label>
+                        <select id="exit_status" name="exit_status" required>
+                            <option value="employed">Employed</option>
+                            <option value="left">Left</option>
+                        </select><br>
+                    </div>
+                    <div class="column">
+                        <label for="relieving">Relieving Date:</label>
+                        <input type="date" id="relieving" name="relieving"><br>
+                    </div>
+                    <div class="column">
+                        <label for="resignation">Resignation:</label>
+                        <input type="text" id="resignation" name="resignation"><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="exit_interview">Exit Interview:</label>
+                        <input type="text" id="exit_interview" name="exit_interview"><br>
+                    </div>
+                    <div class="column">
+                        <label for="leave_encashment">Leave Encashment:</label>
+                        <input type="text" id="leave_encashment" name="leave_encashment"><br>
+                    </div>
+                    <div class="column">
+                    </div>
+                </div>
+
+            </div>
+        </fieldset><button class="next-btn">Next</button></div>
+
+
+        <!-- Additional Features -->
+        <div class="additional_details">
+        <fieldset>
+            <legend id="additional_details_toggle">Additional Features   <i class="fas fa-chevron-down"></i></legend>
+            <!-- Add additional features fields here -->
+            <div class="section-content" id="additional_details_section">
+                <div class="row">
+                    <div class="column">
+                        <label for="emergency_contact">Emergency Contact<span>*</span>:</label>
+                        <input type="text" id="emergency_contact" name="emergency_contact" required><br>
+                    </div>
+                    <div class="column">
+                        <label for="health_insurance">Health Insurance:</label>
+                        <input type="text" id="health_insurance" name="health_insurance"><br>
+                    </div>
+                    <div class="column">
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="personal_bio">Personal Bio:</label>
+                        <textarea id="personal_bio" name="personal_bio"></textarea><br>
+                    </div>
+                    <div class="column">
+                        <label for="company_history">History in the Company:</label>
+                        <textarea id="company_history" name="company_history"></textarea><br>
+                    </div>
+                    <div class="column">
+                    </div>
+                </div>
+
+            </div>
+        </fieldset><button type="submit" >Submit</button></div>
+
+        
+
+
+        
+    </form>
+    <footer>
+        <p>&copy; 2024 Beehive HRMS. All rights reserved.</p>
+      </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const personalDetailsToggle = document.getElementById("personal_details_toggle");
+        const personalDetailsSection = document.getElementById("personal_details_section");
+        const arrowIcon = personalDetailsToggle.querySelector("i");
+
+        personalDetailsToggle.addEventListener("click", function() {
+            if (personalDetailsSection.classList.contains("show")) {
+                personalDetailsSection.classList.remove("show");
+                arrowIcon.classList.remove("fa-chevron-up");
+                arrowIcon.classList.add("fa-chevron-down");
+            } else {
+                personalDetailsSection.classList.add("show");
+                arrowIcon.classList.remove("fa-chevron-down");
+                arrowIcon.classList.add("fa-chevron-up");
+            }
+        });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+        const personalDetailsToggle = document.getElementById("contact_details_toggle");
+        const personalDetailsSection = document.getElementById("contact_details_section");
+        const arrowIcon = personalDetailsToggle.querySelector("i");
+
+        personalDetailsToggle.addEventListener("click", function() {
+            if (personalDetailsSection.classList.contains("show")) {
+                personalDetailsSection.classList.remove("show");
+                arrowIcon.classList.remove("fa-chevron-up");
+                arrowIcon.classList.add("fa-chevron-down");
+            } else {
+                personalDetailsSection.classList.add("show");
+                arrowIcon.classList.remove("fa-chevron-down");
+                arrowIcon.classList.add("fa-chevron-up");
+            }
+        });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+        const personalDetailsToggle = document.getElementById("salary_details_toggle");
+        const personalDetailsSection = document.getElementById("salary_details_section");
+        const arrowIcon = personalDetailsToggle.querySelector("i");
+
+        personalDetailsToggle.addEventListener("click", function() {
+            if (personalDetailsSection.classList.contains("show")) {
+                personalDetailsSection.classList.remove("show");
+                arrowIcon.classList.remove("fa-chevron-up");
+                arrowIcon.classList.add("fa-chevron-down");
+            } else {
+                personalDetailsSection.classList.add("show");
+                arrowIcon.classList.remove("fa-chevron-down");
+                arrowIcon.classList.add("fa-chevron-up");
+            }
+        });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+        const personalDetailsToggle = document.getElementById("leave_details_toggle");
+        const personalDetailsSection = document.getElementById("leave_details_section");
+        const arrowIcon = personalDetailsToggle.querySelector("i");
+
+        personalDetailsToggle.addEventListener("click", function() {
+            if (personalDetailsSection.classList.contains("show")) {
+                personalDetailsSection.classList.remove("show");
+                arrowIcon.classList.remove("fa-chevron-up");
+                arrowIcon.classList.add("fa-chevron-down");
+            } else {
+                personalDetailsSection.classList.add("show");
+                arrowIcon.classList.remove("fa-chevron-down");
+                arrowIcon.classList.add("fa-chevron-up");
+            }
+        });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+        const personalDetailsToggle = document.getElementById("departmentAndGrade_details_toggle");
+        const personalDetailsSection = document.getElementById("departmentAndGrade_details_section");
+        const arrowIcon = personalDetailsToggle.querySelector("i");
+
+        personalDetailsToggle.addEventListener("click", function() {
+            if (personalDetailsSection.classList.contains("show")) {
+                personalDetailsSection.classList.remove("show");
+                arrowIcon.classList.remove("fa-chevron-up");
+                arrowIcon.classList.add("fa-chevron-down");
+            } else {
+                personalDetailsSection.classList.add("show");
+                arrowIcon.classList.remove("fa-chevron-down");
+                arrowIcon.classList.add("fa-chevron-up");
+            }
+        });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const educationalDetailsToggle = document.getElementById("educational_details_toggle");
+            const educationalDetailsSection = document.getElementById("educational_details_section");
+            const educationTable = document.getElementById("education_table");
+            const addRowButton = document.getElementById("add_row_button");
+            const arrowIcon = educationalDetailsToggle.querySelector("i");
+
+            educationalDetailsToggle.addEventListener("click", function() {
+                if (educationalDetailsSection.classList.contains("show")) {
+                    educationalDetailsSection.classList.remove("show");
+                    arrowIcon.classList.remove("fa-chevron-up");
+                    arrowIcon.classList.add("fa-chevron-down");
+                } else {
+                    educationalDetailsSection.classList.add("show");
+                    arrowIcon.classList.remove("fa-chevron-down");
+                    arrowIcon.classList.add("fa-chevron-up");
+                }
+            });
+
+            // Functionality for adding additional rows
+            addRowButton.addEventListener("click", function() {
+        const newRow = createNewRow();
+        educationTable.querySelector("tbody").appendChild(newRow);
+        updateRowNumbers(); // Update row numbers
+    });
+
+    // Function to create a new row
+    function createNewRow() {
+        const newRow = document.createElement("tr");
+        newRow.innerHTML = `
+            <td></td> <!-- Empty cell for row number -->
+            <td><input type="text" name="school_university[]" style="width:100%;"></td>
+            <td><input type="text" name="qualification[]" style="width:100%;"></td>
+            <td><input type="text" name="level[]" style="width:100%;"></td>
+            <td><input type="text" name="year_of_passing[]" style="width:100%;"></td>
+            <td><button class="delete-row-button" type="button"><i class="fas fa-trash-alt" style="color: red;"></i></button></td>
+        `;
+        return newRow;
+    }
+
+    // Function to update row numbers
+    function updateRowNumbers() {
+        const rows = educationTable.querySelectorAll("tbody tr");
+        rows.forEach((row, index) => {
+            row.cells[0].textContent = index + 1; // Set row number
+        });
+    }
+
+    
+    // Event delegation for delete buttons
+    educationTable.addEventListener("click", function(event) {
+        if (event.target.closest(".delete-row-button")) {
+            const row = event.target.closest("tr");
+            row.remove();
+            updateRowNumbers(); // Update row numbers after deletion
+        }
+    });
+
+    function updateEducationalDetails() {
+        const rows = educationTable.querySelectorAll("tbody tr");
+        const educationalDetails = [];
+        rows.forEach(row => {
+            const rowData = {
+                school_university: row.querySelector("input[name='school_university[]']").value,
+                qualification: row.querySelector("input[name='qualification[]']").value,
+                level: row.querySelector("input[name='level[]']").value,
+                year_of_passing: row.querySelector("input[name='year_of_passing[]']").value
+            };
+            educationalDetails.push(rowData);
+        });
+        const educationalDetailsInput = document.getElementById("educational_details_input");
+        educationalDetailsInput.value = JSON.stringify(educationalDetails);
+    }
+
+    // Add event listener to the form submission
+    employeeForm.addEventListener("submit", function(event) {
+        updateEducationalDetails(); // Update educational details before form submission
+    });
+
+        });
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            const workExperienceDetailsToggle = document.getElementById("work_experience_toggle");
+            const workExperienceDetailsSection = document.getElementById("work_experience_section");
+            const workExperienceTable = document.getElementById("work_experience_table");
+            const addWorkExperienceRowButton = document.getElementById("add_work_experience_row_button");
+            const arrowIcon = workExperienceDetailsToggle.querySelector("i");
+
+            workExperienceDetailsToggle.addEventListener("click", function() {
+                if (workExperienceDetailsSection.classList.contains("show")) {
+                    workExperienceDetailsSection.classList.remove("show");
+                    arrowIcon.classList.remove("fa-chevron-up");
+                    arrowIcon.classList.add("fa-chevron-down");
+                } else {
+                    workExperienceDetailsSection.classList.add("show");
+                    arrowIcon.classList.remove("fa-chevron-down");
+                    arrowIcon.classList.add("fa-chevron-up");
+                }
+            });
+    
+            addWorkExperienceRowButton.addEventListener("click", function() {
+            const newRow = createNewWorkExperienceRow();
+            workExperienceTable.querySelector("tbody").appendChild(newRow);
+            updateWorkExperienceRowNumbers(); // Update row numbers
+            });
+
+            // Function to create a new row for work experience
+            function createNewWorkExperienceRow() {
+                const newRow = document.createElement("tr");
+                newRow.innerHTML = `
+                    <td></td> <!-- Empty cell for row number -->
+                    <td><input type="text" name="company[]"></td>
+                    <td><input type="text" name="position[]"></td>
+                    <td><input type="date" name="start_date[]"></td>
+                    <td><input type="date" name="end_date[]"></td>
+                    <td><button class="delete-work-experience-row-button" type="button"><i class="fas fa-trash-alt" style="color: red;"></i></button></td>
+                `;
+                return newRow;
+            }
+
+            // Function to update row numbers for work experience
+            function updateWorkExperienceRowNumbers() {
+                const rows = workExperienceTable.querySelectorAll("tbody tr");
+                rows.forEach((row, index) => {
+                    row.cells[0].textContent = index + 1; // Set row number
+                });
+            }
+
+            // Event delegation for delete buttons in work experience
+            workExperienceTable.addEventListener("click", function(event) {
+                if (event.target.closest(".delete-work-experience-row-button")) {
+                const row = event.target.closest("tr");
+                row.remove();
+                updateWorkExperienceRowNumbers(); // Update row numbers after deletion
+                }
+            });
+
+            function updateWorkExperienceDetails() {
+                const rows = workExperienceTable.querySelectorAll("tbody tr");
+                const workExperienceDetails = [];
+                rows.forEach(row => {
+                    const rowData = {
+                        school_university: row.querySelector("input[name='company[]']").value,
+                        qualification: row.querySelector("input[name='position[]']").value,
+                        level: row.querySelector("input[name='start_date[]']").value,
+                        year_of_passing: row.querySelector("input[name='end_date[]']").value
+                    };
+                    workExperienceDetails.push(rowData);
+                });
+                const workExperienceDetailsInput = document.getElementById("workExperience_details_input");
+                workExperienceDetailsInput.value = JSON.stringify(workExperienceDetails);
+            }
+
+            // Add event listener to the form submission
+            employeeForm.addEventListener("submit", function(event) {
+                updateWorkExperienceDetails(); // Update educational details before form submission
+            });
+
+        });
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            const exitDetailsToggle = document.getElementById("exit_details_toggle");
+            const exitDetailsSection = document.getElementById("exit_details_section");
+            const exitStatusSelect = document.getElementById("exit_status");
+            const relievingDateInput = document.getElementById("relieving_date");
+            const arrowIcon = exitDetailsToggle.querySelector("i");
+
+    
+            exitDetailsToggle.addEventListener("click", function() {
+                if (exitDetailsSection.classList.contains("show")) {
+                    exitDetailsSection.classList.remove("show");
+                    arrowIcon.classList.remove("fa-chevron-up");
+                    arrowIcon.classList.add("fa-chevron-down");
+                } else {
+                    exitDetailsSection.classList.add("show");
+                    arrowIcon.classList.remove("fa-chevron-down");
+                    arrowIcon.classList.add("fa-chevron-up");
+                }
+            });
+    
+            // Function to toggle visibility and required attribute of Relieving Date field
+            function toggleRelievingDateField() {
+                const status = exitStatusSelect.value;
+                if (status === "left") {
+                    relievingDateInput.style.display = "block";
+                    relievingDateInput.setAttribute("required", true);
+                } else {
+                    relievingDateInput.style.display = "none";
+                    relievingDateInput.removeAttribute("required");
+                }
+            }
+
+            // Call toggleRelievingDateField on page load
+            toggleRelievingDateField();
+
+            // Event listener to toggle Relieving Date field visibility and required attribute
+            exitStatusSelect.addEventListener("change", toggleRelievingDateField);
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+        const additionalDetailsToggle = document.getElementById("additional_details_toggle");
+        const additionalDetailsSection = document.getElementById("additional_details_section");
+        const arrowIcon = additionalDetailsToggle.querySelector("i");
+
+        additionalDetailsToggle.addEventListener("click", function() {
+            if (additionalDetailsSection.classList.contains("show")) {
+                additionalDetailsSection.classList.remove("show");
+                arrowIcon.classList.remove("fa-chevron-up");
+                arrowIcon.classList.add("fa-chevron-down");
+            } else {
+                additionalDetailsSection.classList.add("show");
+                arrowIcon.classList.remove("fa-chevron-down");
+                arrowIcon.classList.add("fa-chevron-up");
+            }
+        });
+        });
+        
+        document.addEventListener("DOMContentLoaded",function(){
+            const saveButton = document.getElementById("saveButton")
+            
+            saveButton.addEventListener("click", function(){
+                employeeForm.submit();
+            })
+        })
+        
+
+        
+    </script><script>
+document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.joining_details, .departmentAnd_grade_details, .leave_details, .salary_details, .contact_details, .personal_details, .educational_details, .previuos_work_experience_details, .exit_details, .additional_details, .overview_details');
+      const line = document.querySelector('.line');
+      const nextButtons = document.querySelectorAll('.next-btn');
+      const saveButton = document.getElementById('saveBtn');
+
+
+      tabs.forEach((tab, index) => {
+          tab.addEventListener('click', (e) => {
+              // Remove 'active' class from all tabs and hide tab contents
+              tabs.forEach(tab => tab.classList.remove('active'));
+              tabContents.forEach(content => content.style.display = 'none');
+
+
+              // Add 'active' class to the clicked tab and display corresponding content
+              tab.classList.add('active');
+              line.style.width = tab.offsetWidth + 'px';
+              line.style.left = tab.offsetLeft + 'px';
+              tabContents[index].style.display = 'block';
+
+
+              // Show save button if the clicked tab is the "Exit" tab
+              if (tab.classList.contains('exit-btn')) {
+                  saveButton.style.display = 'block';
+              } else {
+                  saveButton.style.display = 'none';
+              }
+          });
+      });
+
+
+      nextButtons.forEach((button, index) => {
+          button.addEventListener('click', (e) => {
+              e.preventDefault(); // Prevent form submission
+              const currentTabContent = tabContents[index];
+              const nextTabContent = tabContents[index + 1];
+
+
+              // Hide current tab content
+              currentTabContent.style.display = 'none';
+
+
+              // Show next tab content
+              if (nextTabContent) {
+                  nextTabContent.style.display = 'block';
+
+
+                  // Move line to next tab button
+                  const nextTabButton = tabs[index + 1];
+                  line.style.width = nextTabButton.offsetWidth + 'px';
+                  line.style.left = nextTabButton.offsetLeft + 'px';
+
+
+                  // Add 'active' class to next tab button and remove it from current
+                  tabs[index].classList.remove('active');
+                  nextTabButton.classList.add('active');
+
+
+                  // Show save button if the next tab is the "Exit" tab
+                  if (nextTabButton.classList.contains('exit-btn')) {
+                      saveButton.style.display = 'block';
+                  } else {
+                      saveButton.style.display = 'none';
+                  }
+              }
+          });
+      });
+
+
+      // Modified code for handling save button click
+      saveButton.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent default behavior of the button
+          const form = document.getElementById('employee-formmm');
+          const formData = new FormData(form); // Create form data object
+          const jsonData = {}; // Create an empty object to store form data as JSON
+
+
+          // Convert form data to JSON
+          formData.forEach((value, key) => {
+              jsonData[key] = value;
+          });
+
+
+          // Convert JSON object to string
+          const jsonString = JSON.stringify(jsonData);
+
+
+          // Add the JSON string as a hidden input field in the form
+          const jsonDataField = document.createElement('input');
+          jsonDataField.setAttribute('type', 'hidden');
+          jsonDataField.setAttribute('name', 'employee-data'); // Change this name if needed
+          jsonDataField.setAttribute('value', jsonString);
+          form.appendChild(jsonDataField);
+
+
+          // Submit the form
+          form.submit();
+      });
+  });
+
+    </script>
+</body>
+</html>
